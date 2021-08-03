@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "htmlnano": {
+      "removeComments": true,
+      "collapseWhitespace": false
+    }
+  }
+}
