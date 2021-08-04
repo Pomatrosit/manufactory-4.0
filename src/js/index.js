@@ -1,5 +1,7 @@
 import "../scss/index.scss"
 
+import { nav } from "./nav"
+
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed")
+  nav()
 })

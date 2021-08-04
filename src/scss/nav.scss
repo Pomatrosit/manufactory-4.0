@@ -1,0 +1,106 @@
+.nav {
+  @include flex(center, space-between);
+  height: 126px;
+  position: fixed;
+  top: 0;
+  left: 2.5%;
+  width: 95%;
+  z-index: 2;
+}
+
+.logo-and-title {
+  @include flex();
+}
+
+.logo-and-title img:first-child {
+  margin-right: 25px;
+}
+
+.menu {
+  @include flex();
+
+  &__link {
+    font-weight: 500;
+    font-size: 15px;
+    color: #8e8e95;
+    cursor: pointer;
+    display: block;
+    margin-right: 65px;
+    transition: 0.3s;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 2px;
+      background: #406aff;
+      left: -35px;
+      top: 7px;
+      transition: 0.3s;
+      transition-timing-function: ease-in-out;
+      transform: translateY(15px);
+      opacity: 0;
+    }
+  }
+
+  &__link--active {
+    color: #fff;
+
+    &:after {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.menu .menu__link:last-child {
+  margin-right: 0;
+}
+
+.nav__right {
+  @include flex();
+}
+
+.nav__phone {
+  @include flex();
+  margin-right: 50px;
+  cursor: pointer;
+
+  & img {
+    margin-right: 20px;
+  }
+
+  & p {
+    font-weight: 500;
+    font-size: 15px;
+    color: $white;
+  }
+}
+
+.language-switcher {
+  height: 50px;
+  width: 50px;
+  @include flex();
+  cursor: pointer;
+  margin-left: 18px;
+
+  & p {
+    font-weight: 500;
+    font-size: 15px;
+    color: #6a6a74;
+  }
+}
+
+@media (hover: hover) {
+  .menu__link:hover {
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 1842px) {
+  .nav {
+    width: 1750px;
+    left: calc(50% - 875px);
+  }
+}

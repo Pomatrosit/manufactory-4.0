@@ -1,3 +1,67 @@
 body {
   font-family: "Raleway", sans-serif;
 }
+
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -10;
+  background: $black;
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+.app-wrapper {
+  max-width: 1750px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.button-blue {
+  width: 220px;
+  height: 50px;
+  @include flex();
+  background: #406aff;
+  border-radius: 5px;
+  cursor: pointer;
+
+  & span {
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    color: $white;
+  }
+}
+
+.shape {
+  background: #303033;
+  height: 2px;
+  margin-bottom: 80px;
+}
+
+.next-screen-link {
+  @include flex(center, flex-start);
+  margin-bottom: 250px;
+
+  & p {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: #6a6a74;
+    margin-left: 20px;
+  }
+
+  & img {
+    transform: rotate(90deg);
+  }
+}
