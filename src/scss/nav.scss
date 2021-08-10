@@ -1,11 +1,30 @@
 .nav {
-  @include flex(center, space-between);
-  height: 126px;
   position: fixed;
   top: 0;
   left: 2.5%;
   width: 95%;
   z-index: 2;
+  transition: 0.3s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10000px;
+    right: -10000px;
+    background: $white;
+    z-index: 0;
+    transition: 0.3s;
+    opacity: 0;
+  }
+}
+
+.nav-content {
+  @include flex(center, space-between);
+  height: 126px;
+  position: relative;
+  z-index: 1;
 }
 
 .logo-and-title {
@@ -79,22 +98,92 @@
 }
 
 .language-switcher {
-  height: 50px;
-  width: 50px;
   @include flex();
   cursor: pointer;
   margin-left: 18px;
+  position: relative;
 
-  & p {
+  &__primary,
+  &__secondary {
     font-weight: 500;
     font-size: 15px;
     color: #6a6a74;
+    @include flex();
+    height: 50px;
+    width: 50px;
+  }
+
+  &__primary {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__secondary {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    background: #2c2c30;
+    border-radius: 5px;
+    z-index: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: 0.3s;
+  }
+}
+
+.logo-and-title-on-white {
+  display: none;
+}
+
+.phone-icon-on-white {
+  display: none;
+}
+
+//переопределение стилей для белого навбара
+
+.nav-light {
+  &:after {
+    opacity: 1;
+  }
+
+  & .logo-and-title-on-black {
+    display: none;
+  }
+
+  & .logo-and-title-on-white {
+    display: flex;
+  }
+
+  & .menu__link--active {
+    color: #406aff;
+  }
+
+  & .phone-icon {
+    display: none;
+  }
+
+  & .phone-icon-on-white {
+    display: block;
+  }
+
+  & .nav__phone p {
+    color: #8e8e95;
+  }
+
+  & .language-switcher__secondary {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
   }
 }
 
 @media (hover: hover) {
   .menu__link:hover {
     color: #fff;
+  }
+
+  .language-switcher:hover .language-switcher__secondary {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

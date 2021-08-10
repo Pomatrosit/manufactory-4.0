@@ -52,7 +52,6 @@ section {
 
 .next-screen-link {
   @include flex(center, flex-start);
-  margin-bottom: 250px;
 
   & p {
     font-size: 14px;
@@ -64,4 +63,12 @@ section {
   & img {
     transform: rotate(90deg);
   }
+}
+
+.background-logo {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  z-index: -10;
+  transition: 0.05s;
 }

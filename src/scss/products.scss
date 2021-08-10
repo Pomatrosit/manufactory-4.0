@@ -1,0 +1,34 @@
+.products-main {
+  padding: 0 200px;
+  @include flex(center, space-between);
+}
+
+.products-first {
+  max-width: 465px;
+
+  & .products__subtitle {
+    font-weight: 600;
+    font-size: 17px;
+    color: #939396;
+    margin-bottom: 35px;
+  }
+
+  & .products__title {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 101%;
+    color: #ffffff;
+    margin-bottom: 55px;
+  }
+
+  & .products__shape {
+    height: 1px;
+    background: #c4c4c4;
+    margin-bottom: 30px;
+  }
+}
+
+.products__description {
+  font-size: 18px;
+  color: #ffffff;
+}
