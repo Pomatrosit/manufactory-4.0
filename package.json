@@ -21,5 +21,8 @@
     "htmlnano": "^1.0.0",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.37.2"
+  },
+  "dependencies": {
+    "swiper": "^6.8.1"
   }
 }

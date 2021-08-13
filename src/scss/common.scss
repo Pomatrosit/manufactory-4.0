@@ -10,6 +10,11 @@ body {
   bottom: 0;
   z-index: -10;
   background: $black;
+  transition: 0.3s;
+}
+
+.background-light {
+  background: white;
 }
 
 .app {
@@ -20,6 +25,7 @@ body {
 section {
   position: relative;
   overflow: hidden;
+  padding-bottom: 300px;
 }
 
 .app-wrapper {
@@ -48,6 +54,10 @@ section {
   background: #303033;
   height: 2px;
   margin-bottom: 80px;
+
+  &--on-white {
+    background: #f9f9f9;
+  }
 }
 
 .next-screen-link {
@@ -63,6 +73,10 @@ section {
   & img {
     transform: rotate(90deg);
   }
+
+  &__arrow--on-white path {
+    fill: #6a6a74;
+  }
 }
 
 .background-logo {
@@ -70,5 +84,5 @@ section {
   top: 100px;
   right: 0;
   z-index: -10;
-  transition: 0.05s;
+  transition: 0.07s;
 }
